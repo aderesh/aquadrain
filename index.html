@@ -296,6 +296,7 @@
     <script>
         $(document)
             .ready(function () {
+                /*
                 $("#btnSubmit").click(function () {
                     $.getJSON("http://aquadrainservice.azurewebsites.net/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
                         function (Data) {
@@ -306,6 +307,7 @@
                             console.log(">>> fail");
                         });
                 });
+                */
 
                 // Add smooth scrolling to all links in navbar + footer link
                 $(".navbar a, footer a[href='#myPage']")
@@ -363,13 +365,10 @@
                             $("#btnSubmit").button('loading');
                         });
 
-                        /*
+
                         $.ajax({
                             type: "GET",
-                            url: "http://localhost:65420/api/values",
-                            data: JSON.stringify(data),
-                            contentType: "application/json; charset=utf-8",
-                            dataType: "json",
+                            url: "http://aquadrainservice.azurewebsites.net/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
                             crossDomain: true,
                             success: function (msg) {
                                 $("#alertSuccess").alert();
@@ -405,7 +404,6 @@
                                 console.log("complete");
                             }
                         });
-                        */
                     });
 
             })
