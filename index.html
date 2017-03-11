@@ -297,7 +297,7 @@
         $(document)
             .ready(function () {
                 $("#btnSubmit").click(function () {
-                    $.getJSON("http://localhost:65420/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
+                    $.getJSON("http://aquadrainservice.azurewebsites.net/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
                         function (Data) {
                             console.log(">>> suc");
                         })
