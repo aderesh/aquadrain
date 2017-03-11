@@ -365,7 +365,48 @@
                             $("#btnSubmit").button('loading');
                         });
 
+                        $.ajax({
+                            type: "POST",
+                            url: "http://aquadrainservice.azurewebsites.net/api/values",
+                            data: {name = $("#name").val(), phone = $("#phone").val(), email = $("#email").val(), comment = $("#comments").val()},
+                            crossDomain: true,
+                            success: function (msg) {
+                                $("#alertSuccess").alert();
 
+                                if (msg.success) {
+                                    $('#formComment').trigger('reset');
+                                    $("#modalSuccess").modal();
+                                } else {
+                                    if (msg.hasOwnProperty("internalError")) {
+                                        console.log(msg.internalError);
+                                        $("#modalInternalError").modal();
+                                    }
+                                    else {
+                                        var list = $("#listValidateErrors");
+                                        list.empty();
+
+                                        for (var i = 0; i < msg.errors.length; i++)
+                                            list.append("<li>" + msg.errors[i] + "</li>");
+
+                                        $("#modalValidationError").modal();
+                                    }
+                                }
+
+                                console.log("success");
+                            },
+                            error: function (msg) {
+                                $("#modalInternalError").modal();
+                                console.log("error");
+                            },
+                            complete: function (msg) {
+                                $("#btnSubmit").prop("disabled", false);
+                                $("#btnSubmit").button('reset');
+                                console.log("complete");
+                            }
+                        });
+
+
+                        /*
                         $.ajax({
                             type: "GET",
                             url: "http://aquadrainservice.azurewebsites.net/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
@@ -404,6 +445,7 @@
                                 console.log("complete");
                             }
                         });
+                        */
                     });
 
             })
