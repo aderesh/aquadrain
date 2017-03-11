@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Aqua Drain and Waterworks</title>
     <meta charset="utf-8">
@@ -11,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -22,7 +24,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <img class="navbar-brand" src="images/logo.png" style="background-color: white; padding:10px" />
-                <a class="navbar-brand" style="margin-left: 2px; margin-right: 2px; margin-top: 0px; margin-bottom: 0px; padding-left: 0;padding-right: 0" href="tel:6474975181">647.497.5181</a>
+                <a class="navbar-brand" style="margin-left: 2px; margin-right: 2px; margin-top: 0px; margin-bottom: 0px; padding-left: 0;padding-right: 0"
+                    href="tel:6474975181">647.497.5181</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -38,10 +41,10 @@
                     <li>
                         <a href="#testimonials">TESTIMONIALS</a>
                     </li>
+                    -->
                     <li>
                         <a href="#estimate">FREE ESTIMATE</a>
                     </li>
-                    -->
                     <li>
                         <a href="#contact">CONTACT</a>
                     </li>
@@ -132,8 +135,8 @@
     -->
 
 
-<!-- Container (Testimonials Section) -->
-<!--
+    <!-- Container (Testimonials Section) -->
+    <!--
     <div id="testimonials" class="container-fluid text-center">
         <h2>What our customers say</h2>
         <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
@@ -168,7 +171,6 @@
     -->
 
     <!-- Container (Free Estimate Section) -->
-    <!--
     <div id="estimate" class="container-fluid bg-grey">
         <h2 class="text-center">FREE ESTIMATE</h2>
         <form id="formComment">
@@ -192,7 +194,6 @@
             </div>
         </form>
     </div>
-    -->
 
     <!-- Container (Contact Section) -->
     <div id="contact" class="container-fluid text-center">
@@ -272,7 +273,7 @@
                     <h4 class="modal-title">Internal Error</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Please use <a href="mailto:aquadrain@aquadrainandwaterworks.ca">aquadrain@aquadrainandwaterworks.ca</a> to contact with us</p>
+                    <p>Please use <a href="mailto:aquadrain@aquadrainandwaterworks.ca">aquadrain@aquadrainandwaterworks.ca</a>                        to contact with us</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -295,32 +296,43 @@
     <script>
         $(document)
             .ready(function () {
+                $("#btnSubmit").click(function () {
+                    $.getJSON("http://localhost:65420/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
+                        function (Data) {
+                            console.log(">>> suc");
+                        })
+                        .fail(
+                        function (jqXHR, textStatus, err) {
+                            console.log(">>> fail");
+                        });
+                });
+
                 // Add smooth scrolling to all links in navbar + footer link
                 $(".navbar a, footer a[href='#myPage']")
                     .on('click',
-                        function (event) {
-                            // Make sure this.hash has a value before overriding default behavior
-                            if (this.hash !== "") {
-                                // Prevent default anchor click behavior
-                                event.preventDefault();
+                    function (event) {
+                        // Make sure this.hash has a value before overriding default behavior
+                        if (this.hash !== "") {
+                            // Prevent default anchor click behavior
+                            event.preventDefault();
 
-                                // Store hash
-                                var hash = this.hash;
+                            // Store hash
+                            var hash = this.hash;
 
-                                // Using jQuery's animate() method to add smooth page scroll
-                                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                                $('html, body')
-                                    .animate({
-                                        scrollTop: $(hash).offset().top
-                                    },
-                                        900,
-                                        function () {
+                            // Using jQuery's animate() method to add smooth page scroll
+                            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                            $('html, body')
+                                .animate({
+                                    scrollTop: $(hash).offset().top
+                                },
+                                900,
+                                function () {
 
-                                            // Add hash (#) to URL when done scrolling (default click behavior)
-                                            window.location.hash = hash;
-                                        });
-                            } // End if
-                        });
+                                    // Add hash (#) to URL when done scrolling (default click behavior)
+                                    window.location.hash = hash;
+                                });
+                        } // End if
+                    });
 
                 $(window)
                     .scroll(function () {
@@ -351,12 +363,14 @@
                             $("#btnSubmit").button('loading');
                         });
 
+                        /*
                         $.ajax({
-                            type: "POST",
-                            url: "/Home/SendEmail/",
+                            type: "GET",
+                            url: "http://localhost:65420/api/values",
                             data: JSON.stringify(data),
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
+                            crossDomain: true,
                             success: function (msg) {
                                 $("#alertSuccess").alert();
 
@@ -378,15 +392,20 @@
                                         $("#modalValidationError").modal();
                                     }
                                 }
+
+                                console.log("success");
                             },
                             error: function (msg) {
                                 $("#modalInternalError").modal();
+                                console.log("error");
                             },
                             complete: function (msg) {
                                 $("#btnSubmit").prop("disabled", false);
                                 $("#btnSubmit").button('reset');
+                                console.log("complete");
                             }
                         });
+                        */
                     });
 
             })
