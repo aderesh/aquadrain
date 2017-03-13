@@ -234,10 +234,21 @@ footer .glyphicon {
 
 @media screen and (max-width: 480px) {
     .logo { font-size: 150px; }
+    #phoneBrand { font-size: medium; }
 }
 
-#phoneBrand {
-    font-size: small;
+@media screen and (max-width: 360px) {
+    #phoneBrand { 
+        font-size: small; 
+        margin-left: 5px;
+        margin-right: 5px;
+        }
+}
+
+@media screen and (max-width: 360px) {
+    #phoneBrand { 
+        display: none; 
+        }
 }
 
 .floatButton {
