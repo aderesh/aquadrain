@@ -236,6 +236,10 @@ footer .glyphicon {
     .logo { font-size: 150px; }
 }
 
+#phoneBrand {
+    font-size: small;
+}
+
 .floatButton {
     background: none;
     background-color: #f4511e;
