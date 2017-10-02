@@ -90,7 +90,7 @@ h4 {
     width: 80px;
     height: 80px;
     border-radius: 10px;
-    background: #E4F4F7;
+    background: rgba(170, 229, 244, 0.67);
     padding: 10px;
 }
 
@@ -283,6 +283,12 @@ footer .glyphicon {
 .svg-icon {
     width: 100%;
     height: 100%;
+}
+
+#services {
+    background-image: url("../images/background/background.svg");
+    background-repeat: repeat;
+    background-size: 150px;
 }
 
 /*
