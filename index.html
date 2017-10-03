@@ -69,7 +69,7 @@
                     <h4 class="modal-title">Internal Error</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Please use <a href="mailto:aquadrain@aquadrainandwaterworks.ca">aquadrain@aquadrainandwaterworks.ca</a>                        to contact with us</p>
+                    <p>Please use <a href="mailto:contact@aquadrain.org">contact@aquadrain.org</a> to contact with us</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -272,7 +272,7 @@
                 <span class="glyphicon glyphicon-phone"></span> <a href="tel:6474837483">647.483.7481</a>
             </p>
             <p>
-                <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:aquadrain@aquadrainandwaterworks.ca">aquadrain@aquadrainandwaterworks.ca</a>
+                <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:contact@aquadrain.org">contact@aquadrain.org</a>
             </p>
         </div>
     </div>
@@ -288,27 +288,9 @@
         <img class="svg-icon" src="images/phone.svg" />
     </a>
 
-    <!--
-    <a class="floatButton" id="mailButton" href="mailto:aquadrain@aquadrainandwaterworks.ca">
-        <img class="svg-icon" src="images/mail.svg"/>
-    </a>
-    -->
-
     <script>
         $(document)
             .ready(function () {
-                /*
-                $("#btnSubmit").click(function () {
-                    $.getJSON("http://aquadrainservice.azurewebsites.net/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
-                        function (Data) {
-                            console.log(">>> suc");
-                        })
-                        .fail(
-                        function (jqXHR, textStatus, err) {
-                            console.log(">>> fail");
-                        });
-                });
-                */
 
                 // Add smooth scrolling to all links in navbar + footer link
                 $(".navbar a, footer a[href='#myPage']")
@@ -368,7 +350,7 @@
 
                         $.ajax({
                             type: "POST",
-                            url: "http://aquadrainservice.azurewebsites.net/api/values",
+                            url: "http://aquadrainservice.azurewebsites.net/api/estimate",
                             data: { "name": $("#name").val(), "phone": $("#phone").val(), "email": $("#email").val(), "comments": $("#comments").val() },
                             crossDomain: true,
                             success: function (msg) {
@@ -405,48 +387,6 @@
                                 console.log("complete");
                             }
                         });
-
-
-                        /*
-                        $.ajax({
-                            type: "GET",
-                            url: "http://aquadrainservice.azurewebsites.net/api/values?name=" + $("#name").val() + "&phone=" + $("#phone").val() + "&email=" + $("#email").val() + "&comment=" + $("#comments").val(),
-                            crossDomain: true,
-                            success: function (msg) {
-                                $("#alertSuccess").alert();
-
-                                if (msg.success) {
-                                    $('#formComment').trigger('reset');
-                                    $("#modalSuccess").modal();
-                                } else {
-                                    if (msg.hasOwnProperty("internalError")) {
-                                        console.log(msg.internalError);
-                                        $("#modalInternalError").modal();
-                                    }
-                                    else {
-                                        var list = $("#listValidateErrors");
-                                        list.empty();
-
-                                        for (var i = 0; i < msg.errors.length; i++)
-                                            list.append("<li>" + msg.errors[i] + "</li>");
-
-                                        $("#modalValidationError").modal();
-                                    }
-                                }
-
-                                console.log("success");
-                            },
-                            error: function (msg) {
-                                $("#modalInternalError").modal();
-                                console.log("error");
-                            },
-                            complete: function (msg) {
-                                $("#btnSubmit").prop("disabled", false);
-                                $("#btnSubmit").button('reset');
-                                console.log("complete");
-                            }
-                        });
-                        */
                     });
 
             })
