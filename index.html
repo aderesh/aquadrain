@@ -361,7 +361,7 @@
                                     $("#modalSuccess").modal();
                                 } else {
                                     if (msg.hasOwnProperty("internalError")) {
-                                        console.log(msg.internalError);
+                                        console.log(msg.internalError + " " + msg.errors.join(";"));
                                         $("#modalInternalError").modal();
                                     }
                                     else {
@@ -375,16 +375,16 @@
                                     }
                                 }
 
-                                console.log("success");
+                                console.log("receive success");
                             },
                             error: function (msg) {
                                 $("#modalInternalError").modal();
-                                console.log("error");
+                                console.log("receive error");
                             },
                             complete: function (msg) {
                                 $("#btnSubmit").prop("disabled", false);
                                 $("#btnSubmit").button('reset');
-                                console.log("complete");
+                                console.log("receive complete");
                             }
                         });
                     });
