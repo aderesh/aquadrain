@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Random Chat</title>
+
+	<style>
+		.chatControl {
+			width: 300px;
+		}
+
+		.history {
+			list-style-type: none;
+			background-color: lightblue;
+			padding: 0;
+			margin: 0;
+			overflow-y: auto;
+			height: 100px;
+		}
+
+		.clientMessage {
+			text-align: right;
+			background-color: yellowgreen;
+			font-style: italic;
+		    padding: 3px;
+		}
+
+		.operatorMessage {
+			background-color: burlywood;
+		    padding: 3px;
+		}
+
+		#inputMessage {
+			width: 100%;
+			resize: none;
+		}
+
+		#buttonSend {
+			width: 100%;
+			height: 100%;
+			margin: 3px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<label id="yourRandomId" />
+
+		<table class="chatControl">
+			<tr>
+				<td colspan="2">
+					<ul id="chat" class="history">
+							<li class="clientMessage">Hello operator</li>
+							<li class="operatorMessage">Hello client asd fasdf asd fasdf asdf asdf asdfa fa</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="inputMessage" rows="3"></textarea>
+				</td>
+				<td>
+					<input id="buttonSend" type="button" value="Send" />
+				</td>
+			</tr>
+		</table>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				// var websocketURI = new WebSocket("ws://aquadrainservice.azurewebsites.net/api/chat/");
+				var websocketURI = new WebSocket("ws://localhost:57699/api/chat/");
+				$("#buttonSend").click(function (ev) {
+					var message = $("#inputMessage").val()
+					$("#inputMessage").val("")
+					$("#chat").append('<li class="clientMessage">' + message + "</li>")
+					$("#history").
+					websocketURI.send(message);
+				});
+				websocketURI.onopen = function (ev) {
+				}
+				websocketURI.onclose = function (ev) {
+					$("#chat").append('<li class="operatorMessage">' + "Closed" + "</li>")
+				}
+				websocketURI.onmessage = function (ev) {
+					$("#chat").append('<li class="operatorMessage">' + ev.data + "</li>")
+				}
+			});
+
+		</script>
+</body>
+</html>
