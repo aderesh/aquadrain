@@ -288,6 +288,7 @@ footer .glyphicon {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 60px;
