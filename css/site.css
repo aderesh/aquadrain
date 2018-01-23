@@ -1,14 +1,19 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+body {
+    font-family: 'Exo 2', sans-serif;
+}
+
 .headerLabel
 {
     color: #22A9AF;
     padding: 8px;
+    font-weight: bold;
 }
 
 #headersTable{
     margin: auto;
 }
-
 
 .panel-footer .btn:hover {
     background-color: #fff !important;
@@ -17,19 +22,35 @@
 }
 
 #logo {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
 }
 
-#phoneLabel {
-    text-align: right;
+td#phoneCell {
+    vertical-align: middle;
+    text-align: right
+}
+
+.phoneLabel {
+    font-weight: bold;
+    font-size: 140%;
 }
 
 #labelCallWorld {
     color: #f4511e;
+    vertical-align: middle;
 }
 
 #labelPhone {
     color: #22A9AF;
+    vertical-align: middle;
     padding: 8px;
+}
+
+#labelMapleLeaf {
+    color: #f4511e;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
 }
