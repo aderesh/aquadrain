@@ -2,6 +2,9 @@
 
 body {
     font-family: 'Exo 2', sans-serif;
+    background: url('../images/top.png') no-repeat;
+    background-position: center;
+    background-position-y: top;
 }
 
 .headerLabel
