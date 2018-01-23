@@ -15,3 +15,21 @@
     border: 1px solid #f4511e;
     color: #f4511e;
 }
+
+#logo {
+    width: 60px;
+    height: 60px;
+}
+
+#phoneLabel {
+    text-align: right;
+}
+
+#labelCallWorld {
+    color: #f4511e;
+}
+
+#labelPhone {
+    color: #22A9AF;
+    padding: 8px;
+}
