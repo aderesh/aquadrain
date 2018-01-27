@@ -7,11 +7,13 @@ body {
     background-position-y: top;
 }
 
-.headerLabel
+.headerLabelCell
 {
     color: #22A9AF;
-    padding: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
     font-weight: bold;
+    vertical-align: top;
 }
 
 #headersTable{
@@ -25,19 +27,20 @@ body {
 }
 
 #logo {
-    width: 80px;
-    height: 80px;
-    padding: 10px;
+    width: 90px;
+    height: 90px;
 }
 
 td#phoneCell {
     vertical-align: middle;
-    text-align: right
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
 }
 
 .phoneLabel {
     font-weight: bold;
-    font-size: 140%;
+    font-size: 100%;
 }
 
 #labelCallWorld {
@@ -48,12 +51,12 @@ td#phoneCell {
 #labelPhone {
     color: #22A9AF;
     vertical-align: middle;
-    padding: 8px;
+    padding-right: 18px;
 }
 
 #labelMapleLeaf {
     color: #f4511e;
     vertical-align: middle;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 }
