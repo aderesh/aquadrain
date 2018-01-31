@@ -2,9 +2,10 @@
 
 body {
     font-family: 'Exo 2', sans-serif;
-    background: url('../images/top.png') no-repeat;
-    background-position: center;
-    background-position-y: top;
+    background: url('../images/top.png'), url('../images/backgroundDrain.png');
+    background-position: center, center;
+    background-position-y: top, 120px;
+    background-repeat: no-repeat, no-repeat;
 }
 
 .headerLabelCell
@@ -59,4 +60,34 @@ td#phoneCell {
     vertical-align: middle;
     width: 20px;
     height: 20px;
+}
+
+#contentTable {
+    margin-top: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 900px;
+}
+
+#chapterHeaderCell {
+    text-align: left;
+    color: #f4511e;
+    font-size: 140%;
+    font-weight: bolder;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.chapterSubHeaderCell {
+    text-align: left;
+    color: #22A9AF;
+    font-weight: bold;
+    vertical-align: top;
+    width: 130px;
+}
+
+.chapterDetailsCell {
+    text-align: left;
+    padding-bottom: 20px;
 }
