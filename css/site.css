@@ -8,6 +8,11 @@ body {
     background-repeat: no-repeat, no-repeat;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 .headerLabelCell
 {
     color: #22A9AF;
@@ -90,4 +95,39 @@ td#phoneCell {
 .chapterDetailsCell {
     text-align: left;
     padding-bottom: 20px;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #192531;
+    text-align: center;
+    width: 1025px;
+    margin: auto;
+  }
+
+  #footerCopyright {
+      color: white;
+      float: left;
+      margin-left: 5px;
+      margin-right: 5px;
+  }
+
+  
+
+  #footerPhone {
+      color: white;
+      float: right;
+      margin-left: 5px;
+      margin-right: 5px;
+  }
+
+  #footerPhoneIcon {
+    color: #3EA0A5;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
 }
