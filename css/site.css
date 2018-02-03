@@ -20,6 +20,7 @@ html {
     padding-right: 3px;
     font-weight: bold;
     vertical-align: top;
+    cursor: pointer;
 }
 
 #headersTable{
@@ -67,12 +68,16 @@ td#phoneCell {
     height: 20px;
 }
 
-#contentTable {
+.contentTable {
     margin-top: 460px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     width: 900px;
+}
+
+.initiallyHiddenContentTable {
+    visibility: collapse;
 }
 
 #chapterHeaderCell {

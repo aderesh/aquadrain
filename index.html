@@ -6,31 +6,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/site.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
     <table id="headersTable">
         <tr>
             <td rowspan="3">
-                <img id="logo" 
-                     src="images/logo.svg"/>
+                <img id="logo" src="images/logo.svg" />
             </td>
-            <td id="phoneCell"
-                colspan="6">
-                <img id="labelMapleLeaf"
-                    src="images/mapleLeaf.svg" />
-                <span id="labelCallWorld"
-                   class="phoneLabel">CALL</span>
-                <span id="labelPhone"
-                   class="phoneLabel">647 979 3347</span>
+            <td id="phoneCell" colspan="6">
+                <img id="labelMapleLeaf" src="images/mapleLeaf.svg" />
+                <span id="labelCallWorld" class="phoneLabel">CALL</span>
+                <span id="labelPhone" class="phoneLabel">647 979 3347</span>
             </td>
         </tr>
         <tr>
-            <td class="headerLabelCell">DRAIN</td>
-            <td class="headerLabelCell">WATER SERVICE</td>
-            <td class="headerLabelCell">WATERPROOFING</td>
-            <td class="headerLabelCell">EMERGENCY PLUMBING</td>
-            <td class="headerLabelCell">PROMOTION</td>
+            <td class="headerLabelCell" id="drainHeader">
+                DRAIN
+            </td>
+            <td class="headerLabelCell" id="waterServiceHeader">
+                WATER SERVICE
+            </td>
+            <td class="headerLabelCell" id="waterProofingHeader">
+                WATERPROOFING
+            </td>
+            <td class="headerLabelCell" id="emergencyPlumbingHeader">
+                EMERGENCY PLUMBING
+            </td>
+            <td class="headerLabelCell" id="promotionHeader">
+                PROMOTION
+            </td>
         </tr>
         <tr>
             <td />
@@ -42,175 +48,273 @@
     </table>
 
     <div id="content">
+        <table class="contentTable" id="drainContentTable">
+            <tr>
+                <td colspan="2" id="chapterHeaderCell">
+                    DRAIN
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">CAUSES</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">SOLUTIONS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PLUMBER TIPS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PRICING</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+        </table>
 
-    <table id="contentTable">
-        <tr>
-            <td colspan="2"
-                id="chapterHeaderCell">
-                DRAIN
-            </td>
-        </tr>
-        <tr>
-            <td class="chapterSubHeaderCell">CAUSES</td>
-            <td class="chapterDetailsCell">
-                    We believe strongly that every home is unique. Each plumbing system has its own features, functions 
-                    and intricacies. Various problems that arise are unique to your property, no one else’s. So when we arrive 
-                    at any service call, this is the approach we take. It is an approach characterized by customization 
-                    and personalization. 
-            </td>
-        </tr>
-        <tr>
-            <td class="chapterSubHeaderCell">SOLUTIONS</td>
-            <td class="chapterDetailsCell">
-                    We believe strongly that every home is unique. Each plumbing system has its own features, functions 
-                    and intricacies. Various problems that arise are unique to your property, no one else’s. So when we arrive 
-                    at any service call, this is the approach we take. It is an approach characterized by customization 
-                    and personalization. 
-            </td>
-        </tr>
-        <tr>
-            <td class="chapterSubHeaderCell">PLUMBER TIPS</td>
-            <td class="chapterDetailsCell">
-                    We believe strongly that every home is unique. Each plumbing system has its own features, functions 
-                    and intricacies. Various problems that arise are unique to your property, no one else’s. So when we arrive 
-                    at any service call, this is the approach we take. It is an approach characterized by customization 
-                    and personalization. 
-            </td>
-        </tr>
-        <tr>
-            <td class="chapterSubHeaderCell">PRICING</td>
-            <td class="chapterDetailsCell">
-                    We believe strongly that every home is unique. Each plumbing system has its own features, functions 
-                    and intricacies. Various problems that arise are unique to your property, no one else’s. So when we arrive 
-                    at any service call, this is the approach we take. It is an approach characterized by customization 
-                    and personalization. 
-            </td>
-        </tr>
+        <table class="contentTable" id="waterServiceContentTable">
+            <tr>
+                <td colspan="2" id="chapterHeaderCell">
+                    WATER SERVICE
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">CAUSES</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">SOLUTIONS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PLUMBER TIPS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PRICING</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+        </table>
 
+        <table class="contentTable" id="waterProofingContentTable">
+            <tr>
+                <td colspan="2" id="chapterHeaderCell">
+                    WATERPROOFING
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">CAUSES</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">SOLUTIONS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PLUMBER TIPS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PRICING</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+        </table>
 
+        <table class="contentTable" id="emergencyPlumbingContentTable">
+            <tr>
+                <td colspan="2" id="chapterHeaderCell">
+                    EMERGENCY PLUMBING
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">CAUSES</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">SOLUTIONS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PLUMBER TIPS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PRICING</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+        </table>
 
-    </table>
+        <table class="contentTable" id="promotionContentTable">
+            <tr>
+                <td colspan="2" id="chapterHeaderCell">
+                    PROMOTION
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">CAUSES</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">SOLUTIONS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PLUMBER TIPS</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+            <tr>
+                <td class="chapterSubHeaderCell">PRICING</td>
+                <td class="chapterDetailsCell">
+                    We believe strongly that every home is unique. Each plumbing system has its own features, functions and intricacies. Various
+                    problems that arise are unique to your property, no one else’s. So when we arrive at any service call,
+                    this is the approach we take. It is an approach characterized by customization and personalization.
+                </td>
+            </tr>
+        </table>
+    </div>
 
     <footer class="footer">
         <div id="footerCopyright">&#9400; 2018 Aqua Drain and Waterworks</div>
 
-        <a class="footerLabelRight" 
-           href="https://www.facebook.com/AquaDrainAndWaterworks/">facebook</a>
-        <img class="footerIcon" 
-             src="images/facebook.svg"/>
-        <a class="footerLabelRight" 
-           href="mailto:contact@aquadrain.org">contact@aquadrain.org</a>
-        <img class="footerIcon" 
-             src="images/email.svg"/>
-        <a class="footerLabelRight" 
-           href="tel:6479793347">647 979 3347</a>
-        <img class="footerIcon" 
-           src="images/cellphone.svg"/>
+        <a class="footerLabelRight" href="https://www.facebook.com/AquaDrainAndWaterworks/">facebook</a>
+        <img class="footerIcon" src="images/facebook.svg" />
+        <a class="footerLabelRight" href="mailto:contact@aquadrain.org">contact@aquadrain.org</a>
+        <img class="footerIcon" src="images/email.svg" />
+        <a class="footerLabelRight" href="tel:6479793347">647 979 3347</a>
+        <img class="footerIcon" src="images/cellphone.svg" />
     </footer>
 
     <script>
+        function hide() {
+            console.log(arguments[0])
+        }
+
         $(document)
             .ready(function () {
-
                 // Add smooth scrolling to all links in navbar + footer link
-                $(".navbar a, footer a[href='#myPage']")
-                    .on('click',
-                    function (event) {
-                        // Make sure this.hash has a value before overriding default behavior
-                        if (this.hash !== "") {
-                            // Prevent default anchor click behavior
-                            event.preventDefault();
 
-                            // Store hash
-                            var hash = this.hash;
+                $("#drainHeader").click(function () {
+                    console.log("drainHeader")
+                    showContentTable("drainContentTable")
+                })
 
-                            // Using jQuery's animate() method to add smooth page scroll
-                            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                            $('html, body')
-                                .animate({
-                                    scrollTop: $(hash).offset().top
-                                },
-                                900,
-                                function () {
+                $("#waterServiceHeader").click(function () {
+                    console.log("waterServiceHeader")
+                    showContentTable("waterServiceContentTable")
+                })
 
-                                    // Add hash (#) to URL when done scrolling (default click behavior)
-                                    window.location.hash = hash;
-                                });
-                        } // End if
-                    });
+                $("#waterProofingHeader").click(function () {
+                    console.log("waterProofingHeader")
+                    showContentTable("waterProofingContentTable")
+                })
 
-                $(window)
-                    .scroll(function () {
-                        $(".slideanim")
-                            .each(function () {
-                                var pos = $(this).offset().top;
+                $("#emergencyPlumbingHeader").click(function () {
+                    console.log("emergencyPlumbingHeader")
+                    showContentTable("emergencyPlumbingContentTable")
+                })
 
-                                var winTop = $(window).scrollTop();
-                                if (pos < winTop + 600) {
-                                    $(this).addClass("slide");
-                                }
-                            });
-                    });
+                $("#promotionHeader").click(function () {
+                    console.log("promotionHeader")
+                    showContentTable("promotionContentTable")
+                })
 
-                $('form')
-                    .submit(function (event) {
-                        event.preventDefault();
+                let allChapters = [
+                        "drainContentTable",
+                        "waterServiceContentTable",
+                        "waterProofingContentTable",
+                        "emergencyPlumbingContentTable",
+                        "promotionContentTable"];
 
-                        var data = {
-                            Name: $('#name').val(),
-                            Phone: $('#phone').val(),
-                            Email: $('#email').val(),
-                            Comments: $('#comments').val()
-                        };
+                showContentTable("drainContentTable")
 
-                        $(function () {
-                            $("#btnSubmit").prop("disabled", true);
-                            $("#btnSubmit").button('loading');
-                        });
+                function showContentTable(chapterName) {
 
-                        $.ajax({
-                            type: "POST",
-                            url: "http://aquadrainservice.azurewebsites.net/api/estimate",
-                            data: { "name": $("#name").val(), "phone": $("#phone").val(), "email": $("#email").val(), "comments": $("#comments").val() },
-                            crossDomain: true,
-                            success: function (msg) {
-                                $("#alertSuccess").alert();
+                    allChapters.forEach(function (elementName) {
+                            $("#" + elementName).hide();
+                        })
 
-                                if (msg.success) {
-                                    $('#formComment').trigger('reset');
-                                    $("#modalSuccess").modal();
-                                } else {
-                                    if (msg.hasOwnProperty("internalError")) {
-                                        console.log(msg.internalError + " " + msg.errors.join(";"));
-                                        $("#modalInternalError").modal();
-                                    }
-                                    else {
-                                        var list = $("#listValidateErrors");
-                                        list.empty();
-
-                                        for (var i = 0; i < msg.errors.length; i++)
-                                            list.append("<li>" + msg.errors[i] + "</li>");
-
-                                        $("#modalValidationError").modal();
-                                    }
-                                }
-
-                                console.log("receive success");
-                            },
-                            error: function (msg) {
-                                $("#modalInternalError").modal();
-                                console.log("receive error");
-                            },
-                            complete: function (msg) {
-                                $("#btnSubmit").prop("disabled", false);
-                                $("#btnSubmit").button('reset');
-                                console.log("receive complete");
-                            }
-                        });
-                    });
+                    $("#" + chapterName).show();
+                }
 
             })
     </script>
 
 </body>
+
 </html>
