@@ -269,49 +269,76 @@
             .ready(function () {
                 // Add smooth scrolling to all links in navbar + footer link
 
+                const drainContentTable = "drainContentTable";
+                const waterServiceContentTable = "waterServiceContentTable";
+                const waterProofingContentTable = "waterProofingContentTable";
+                const emergencyPlumbingContentTable = "emergencyPlumbingContentTable";
+                const promotionContentTable = "promotionContentTable";
+
+
                 $("#drainHeader").click(function () {
                     console.log("drainHeader")
-                    showContentTable("drainContentTable")
+                    showContentTable(drainContentTable)
                 })
 
                 $("#waterServiceHeader").click(function () {
                     console.log("waterServiceHeader")
-                    showContentTable("waterServiceContentTable")
+                    showContentTable(waterServiceContentTable)
                 })
 
                 $("#waterProofingHeader").click(function () {
                     console.log("waterProofingHeader")
-                    showContentTable("waterProofingContentTable")
+                    showContentTable(waterProofingContentTable)
                 })
 
                 $("#emergencyPlumbingHeader").click(function () {
                     console.log("emergencyPlumbingHeader")
-                    showContentTable("emergencyPlumbingContentTable")
+                    showContentTable(emergencyPlumbingContentTable)
                 })
 
                 $("#promotionHeader").click(function () {
                     console.log("promotionHeader")
-                    showContentTable("promotionContentTable")
+                    showContentTable(promotionContentTable)
                 })
 
                 let allChapters = [
-                        "drainContentTable",
-                        "waterServiceContentTable",
-                        "waterProofingContentTable",
-                        "emergencyPlumbingContentTable",
-                        "promotionContentTable"];
+                        {
+                            contentName : drainContentTable, 
+                            background : "backgroundDrain.png"
+                        },
+                        {
+                            contentName : waterServiceContentTable, 
+                            background : "backgroundWaterService.png"
+                        },
+                        {
+                            contentName : waterProofingContentTable, 
+                            background : "backgroundDrain.png"
+                        },
+                        {
+                            contentName : emergencyPlumbingContentTable, 
+                            background : "backgroundDrain.png"
+                        },
+                        {
+                            contentName : promotionContentTable, 
+                            background : "backgroundDrain.png"
+                        }
+                        ];
 
-                showContentTable("drainContentTable")
+                showContentTable(drainContentTable)
 
                 function showContentTable(chapterName) {
 
+                    var chapterDescription = allChapters.find(function (element) {
+                        return element.contentName == chapterName;
+                    })
+
                     allChapters.forEach(function (elementName) {
-                            $("#" + elementName).hide();
+                            $("#" + elementName.contentName).hide();
                         })
 
                     $("#" + chapterName).show();
+                    $("body").css('background-image', `url('../images/top.png'), url('../images/${chapterDescription.background}')`)
                 }
-
             })
     </script>
 
