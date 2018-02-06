@@ -6,6 +6,8 @@ body {
     background-position: center, center;
     background-position-y: top, 120px;
     background-repeat: no-repeat, no-repeat;
+
+    transition: linear all 0.5s;
 }
 
 html {
