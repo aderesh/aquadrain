@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Exo 2', sans-serif;
-    background: url('../images/top.png'), url('../images/backgroundDrain.png');
+    background: url('../images/top.png'), url('../images/backgroundMain.png');
     background-position: center, center;
     background-position-y: top, 120px;
     background-repeat: no-repeat, no-repeat;

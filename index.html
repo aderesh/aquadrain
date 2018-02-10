@@ -275,7 +275,6 @@
                 const emergencyPlumbingContentTable = "emergencyPlumbingContentTable";
                 const promotionContentTable = "promotionContentTable";
 
-
                 $("#drainHeader").click(function () {
                     console.log("drainHeader")
                     showContentTable(drainContentTable)
@@ -308,7 +307,7 @@
                         },
                         {
                             contentName : waterServiceContentTable, 
-                            background : "backgroundWaterService.png"
+                            background : "backgroundDrain.png"
                         },
                         {
                             contentName : waterProofingContentTable, 
@@ -324,7 +323,10 @@
                         }
                         ];
 
-                showContentTable(drainContentTable)
+                        
+                allChapters.forEach(function (elementName) {
+                        $("#" + elementName.contentName).hide();
+                    })
 
                 function showContentTable(chapterName) {
 
