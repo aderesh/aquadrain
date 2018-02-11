@@ -10,7 +10,44 @@
 </head>
 
 <body>
-    <table id="headersTable">
+
+    <div id="xHeader">
+        <img id="logo" src="images/logo.svg" />
+        <div id="xPhoneAndHeaders">
+            <div id="xPhone">
+                <span id="labelPhone" class="phoneLabel">647 979 3347</span>
+                <span id="labelCallWorld" class="phoneLabel">CALL</span>
+                <img id="labelMapleLeaf" src="images/mapleLeaf.svg" />
+            </div>
+            <div id="xHeaders">
+                <div class="headerLabelCell" id="drainHeader">
+                    DRAIN
+                </div>
+                <div class="headerLabelCell" id="waterServiceHeader">
+                    WATER SERVICE
+                </div>
+                <div class="headerLabelCell" id="waterProofingHeader">
+                    WATERPROOFING
+                </div>
+                <div class="headerLabelCell" id="emergencyPlumbingHeader">
+                    EMERGENCY PLUMBING
+                </div>
+                <div class="headerLabelCell" id="promotionHeader">
+                    PROMOTION
+                </div>
+            </div>
+            <div id="xMinimizedHeaders">
+                <input id="hamburgerCheckBox" 
+                       name="hamburgerCheckBox"
+                       type="checkbox">
+                    <label for="hamburgerCheckBox"/>
+                </input>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <table id="headersTable" border="1">
         <tr>
             <td rowspan="3">
                 <img id="logo" src="images/logo.svg" />
@@ -21,7 +58,7 @@
                 <span id="labelPhone" class="phoneLabel">647 979 3347</span>
             </td>
         </tr>
-        <tr>
+        <tr class="expandedHeaders">
             <td class="headerLabelCell" id="drainHeader">
                 DRAIN
             </td>
@@ -38,7 +75,7 @@
                 PROMOTION
             </td>
         </tr>
-        <tr>
+        <tr class="expandedHeaders">
             <td />
             <td />
             <td />
@@ -46,6 +83,7 @@
             <td />
         </tr>
     </table>
+-->
 
     <div id="content">
         <table class="contentTable" id="drainContentTable">
