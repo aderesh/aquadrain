@@ -110,17 +110,37 @@ td#phoneCell {
     left: 0;
     padding: 1rem;
     background-color: #192531;
-    text-align: center;
-    width: 1025px;
+    max-width: 1025px;
     margin: auto;
+    display: flex;
+  }
+
+  #contactGroup {
+      display: flex;
   }
 
   #footerCopyright {
+      flex: 1;
       color: white;
       float: left;
       margin-left: 5px;
       margin-right: 5px;
       font-size: 80%;
+  }
+
+  @media screen and (max-width: 640px) {
+      .footer{
+          flex-direction: column;
+      }
+
+      #footerCopyright {
+          order: 2;
+          margin: auto;
+      }
+
+      #contactGroup {
+          margin: auto;
+      }
   }
 
 .footerLabelRight {
