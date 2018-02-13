@@ -59,6 +59,7 @@ td#phoneCell {
     color: #22A9AF;
     vertical-align: middle;
     padding-right: 18px;
+    padding: 0 5px;
 }
 
 #labelMapleLeaf {
