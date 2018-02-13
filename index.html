@@ -42,6 +42,13 @@
                        type="checkbox">
                     <label for="hamburgerCheckBox"/>
                 </input>
+                <ul id="xHeadersMenu">
+                    <li id="subDrainHeader">DRAIN</li>
+                    <li id="subWaterServiceHeader">WATER SERVICE</li>
+                    <li id="subWaterProofingHeader">WATERPROOFING</li>
+                    <li id="subEmergencyPlumbingHeader">EMERGENCY PLUMBING</li>
+                    <li id="subPromotionHeader">PROMOTION</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -317,8 +324,16 @@
                     console.log("drainHeader")
                     showContentTable(drainContentTable)
                 })
+                $("#subDrainHeader").click(function () {
+                    console.log("drainHeader")
+                    showContentTable(drainContentTable)
+                })
 
                 $("#waterServiceHeader").click(function () {
+                    console.log("waterServiceHeader")
+                    showContentTable(waterServiceContentTable)
+                })
+                $("#subWaterServiceHeader").click(function () {
                     console.log("waterServiceHeader")
                     showContentTable(waterServiceContentTable)
                 })
@@ -327,13 +342,25 @@
                     console.log("waterProofingHeader")
                     showContentTable(waterProofingContentTable)
                 })
+                $("#subWaterProofingHeader").click(function () {
+                    console.log("waterProofingHeader")
+                    showContentTable(waterProofingContentTable)
+                })
 
                 $("#emergencyPlumbingHeader").click(function () {
                     console.log("emergencyPlumbingHeader")
                     showContentTable(emergencyPlumbingContentTable)
                 })
+                $("#subEmergencyPlumbingHeader").click(function () {
+                    console.log("emergencyPlumbingHeader")
+                    showContentTable(emergencyPlumbingContentTable)
+                })
 
                 $("#promotionHeader").click(function () {
+                    console.log("promotionHeader")
+                    showContentTable(promotionContentTable)
+                })
+                $("#subPromotionHeader").click(function () {
                     console.log("promotionHeader")
                     showContentTable(promotionContentTable)
                 })
@@ -365,6 +392,19 @@
                 allChapters.forEach(function (elementName) {
                         $("#" + elementName.contentName).hide();
                     })
+
+                $("#xHeadersMenu").hide();
+
+                $("#hamburgerCheckBox").change(function(){
+                    if ($(this).is(":checked"))
+                    {
+                        $("#xHeadersMenu").show();
+                    }
+                    else
+                    {
+                        $("#xHeadersMenu").hide();
+                    }
+                });
 
                 function showContentTable(chapterName) {
 
