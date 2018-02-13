@@ -52,7 +52,6 @@
     </div>
 
     <div id="content">
-
         <div class="xContent" id="drainContentTable">
             <div class="xChapterHeader">
                 DRAIN
@@ -258,6 +257,7 @@
             .ready(function () {
                 // Add smooth scrolling to all links in navbar + footer link
 
+                const main = "main";
                 const drainContentTable = "drainContentTable";
                 const waterServiceContentTable = "waterServiceContentTable";
                 const waterProofingContentTable = "waterProofingContentTable";
@@ -311,24 +311,34 @@
 
                 let allChapters = [
                     {
+                        contentName: main,
+                        background: "backgroundMain.png",
+                        pageHash: ""
+                    },
+                    {
                         contentName: drainContentTable,
-                        background: "backgroundDrain.png"
+                        background: "backgroundDrain.png",
+                        pageHash: "drain"
                     },
                     {
                         contentName: waterServiceContentTable,
-                        background: "backgroundDrain.png"
+                        background: "backgroundDrain.png",
+                        pageHash: "water-service"
                     },
                     {
                         contentName: waterProofingContentTable,
-                        background: "backgroundDrain.png"
+                        background: "backgroundDrain.png",
+                        pageHash: "water-proofing"
                     },
                     {
                         contentName: emergencyPlumbingContentTable,
-                        background: "backgroundDrain.png"
+                        background: "backgroundDrain.png",
+                        pageHash: "emergency-plumbing"
                     },
                     {
                         contentName: promotionContentTable,
-                        background: "backgroundDrain.png"
+                        background: "backgroundDrain.png",
+                        pageHash: "promotion"
                     }
                 ];
 
@@ -348,11 +358,22 @@
                     }
                 });
 
-                function showContentTable(chapterName) {
+                showContentTable(main);
 
+                window.onhashchange = function(e) {
+                    var chapterDescription = allChapters.find(function (element) {
+                        return element.pageHash == window.location.hash.substring(1);
+                    })
+
+                    showContentTable(chapterDescription.contentName)
+                }
+
+                function showContentTable(chapterName) {
                     var chapterDescription = allChapters.find(function (element) {
                         return element.contentName == chapterName;
                     })
+
+                    window.location.hash = chapterDescription.pageHash;
 
                     allChapters.forEach(function (elementName) {
                         $("#" + elementName.contentName).hide();
