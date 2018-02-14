@@ -12,7 +12,9 @@
 <body>
 
     <div id="xHeader">
-        <img id="logo" src="images/logo.svg" />
+        <a href="#">
+            <img id="logo" src="images/logo.svg" />
+        </a>
         <div id="xPhoneAndHeaders">
             <div id="xPhone">
                 <span id="labelPhone" class="phoneLabel">647 979 3347</span>
@@ -52,6 +54,25 @@
     </div>
 
     <div id="content">
+        <div class="xContent" id="mainContentTable">
+            <div class="xChapterHeader">
+                FREE ESTIMATE
+            </div>
+            <form id="formComment">
+                <div id="phoneAndNameAndEmailSection">
+                    <input id="name" class="entryField" placeholder="Name" type="text" required/>
+                    <input id="phone" class="entryField" placeholder="Phone" type="text" required/>
+                    <input id="email" class="entryField" placeholder="Email" type="email" required/>
+                </div>
+                <div>
+                    <textarea id="comments" placeholder="How can we help you?" rows="5"></textarea>
+                </div>
+                <div id="formButtons">
+                    <button type="submit" id="btnSubmit" data-loading-text="Sending...">Send</button>
+                </div>
+            </form>
+        </div>
+
         <div class="xContent" id="drainContentTable">
             <div class="xChapterHeader">
                 DRAIN
@@ -257,7 +278,7 @@
             .ready(function () {
                 // Add smooth scrolling to all links in navbar + footer link
 
-                const main = "main";
+                const main = "mainContentTable";
                 const drainContentTable = "drainContentTable";
                 const waterServiceContentTable = "waterServiceContentTable";
                 const waterProofingContentTable = "waterProofingContentTable";
@@ -360,7 +381,7 @@
 
                 showContentTable(main);
 
-                window.onhashchange = function(e) {
+                window.onhashchange = function (e) {
                     var chapterDescription = allChapters.find(function (element) {
                         return element.pageHash == window.location.hash.substring(1);
                     })
@@ -382,6 +403,60 @@
                     $("#" + chapterName).show();
                     $("body").css('background-image', `url('../images/top.png'), url('../images/${chapterDescription.background}')`)
                 }
+
+                $('form')
+                    .submit(function (event) {
+                        event.preventDefault();
+
+                        var data = {
+                            Name: $('#name').val(),
+                            Phone: $('#phone').val(),
+                            Email: $('#email').val(),
+                            Comments: $('#comments').val()
+                        };
+
+                        $(function () {
+                            $("#btnSubmit").prop("disabled", true);
+                        });
+
+                        $.ajax({
+                            type: "POST",
+                            url: "http://aquadrainservice.azurewebsites.net/api/estimate",
+                            data: { "name": $("#name").val(), "phone": $("#phone").val(), "email": $("#email").val(), "comments": $("#comments").val() },
+                            crossDomain: true,
+                            success: function (msg) {
+                                if (msg.success) {
+                                    $('#formComment').trigger('reset');
+                                    alert("Message has been sent. We will contact you soon!");
+                                } else {
+                                    if (msg.hasOwnProperty("internalError")) {
+                                        console.log(msg.internalError + " " + msg.errors.join(";"));
+                                        alert("Internal Error. Please use contact@aquadrain.org to contact us.");
+                                    }
+                                    else {
+                                        var list = $("#listValidateErrors");
+                                        list.empty();
+
+                                        for (var i = 0; i < msg.errors.length; i++)
+                                            list.append("<li>" + msg.errors[i] + "</li>");
+
+                                        alert("Not all fields are filled. Please try again");
+                                    }
+                                }
+
+                                console.log("receive success");
+                            },
+                            error: function (msg) {
+                                alert("Internal Error. Please use contact@aquadrain.org to contact us.");
+                                console.log("receive error");
+                            },
+                            complete: function (msg) {
+                                $("#btnSubmit").prop("disabled", false);
+                                console.log("receive complete");
+                            }
+                        });
+                    });
+
             })
     </script>
 

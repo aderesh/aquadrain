@@ -326,3 +326,36 @@ td#phoneCell {
     text-align: right;
     border-bottom: 1px solid #E2E2E2;
  }
+
+ #phoneAndNameAndEmailSection {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .entryField{
+    width: 32%;
+    margin: 10px 0px;
+}
+
+ @media screen and (max-width: 500px)
+ {
+     #phoneAndNameAndEmailSection{
+         flex-direction: column;
+     }
+
+     .entryField {
+         width: 100%;
+     }
+ }
+
+ #comments {
+     margin: 10px auto;
+     width: 100%;
+     resize: none;
+     padding: 0;
+ }
+
+ #formButtons {
+     display: flex;
+     flex-direction: row-reverse;
+ }
