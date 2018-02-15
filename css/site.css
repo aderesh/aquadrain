@@ -160,6 +160,7 @@ td#phoneCell {
     max-width: 1025px;
     margin: auto;
     display: flex;
+    width: 100%; /* this is to fix margin: auto in ie*/
   }
 
   #contactGroup {
