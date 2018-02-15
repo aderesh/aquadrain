@@ -374,7 +374,7 @@
                     }
                 });
 
-                showContentTable(main);
+                processHashChange();
 
                 // for ie support :(
                 function findDescriptionByChapter (array, predicate){
@@ -390,6 +390,11 @@
                 }
 
                 window.onhashchange = function (e) {
+                    processHashChange();
+                }
+
+                function processHashChange()
+                {
                     var chapterDescription = findDescriptionByChapter(allChapters, function (el) {
                         return el.pageHash == window.location.hash.substring(1);
                     });
