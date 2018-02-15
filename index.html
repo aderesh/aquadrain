@@ -40,9 +40,8 @@
                 </div>
             </div>
             <div id="xMinimizedHeaders">
-                <input id="hamburgerCheckBox" name="hamburgerCheckBox" type="checkbox">
-                <label for="hamburgerCheckBox" />
-                </input>
+                <input id="hamburgerCheckBox" name="hamburgerCheckBox" type="checkbox" />
+                <label for="hamburgerCheckBox"></label>
                 <ul id="xHeadersMenu">
                     <li id="subDrainHeader">DRAIN</li>
                     <li id="subWaterServiceHeader">WATER SERVICE</li>
@@ -271,10 +270,6 @@
     </footer>
 
     <script>
-        function hide() {
-            console.log(arguments[0])
-        }
-
         $(document)
             .ready(function () {
                 // Add smooth scrolling to all links in navbar + footer link
@@ -381,18 +376,31 @@
 
                 showContentTable(main);
 
+                // for ie support :(
+                function findDescriptionByChapter (array, predicate){
+                    for (i = 0; i < array.length; i++)
+                    {
+                        let el = array[i];
+                        if (predicate(el))
+                        {
+                            return el;
+                        }
+                    }
+                    return null;
+                }
+
                 window.onhashchange = function (e) {
-                    var chapterDescription = allChapters.find(function (element) {
-                        return element.pageHash == window.location.hash.substring(1);
-                    })
+                    var chapterDescription = findDescriptionByChapter(allChapters, function (el) {
+                        return el.pageHash == window.location.hash.substring(1);
+                    });
 
                     showContentTable(chapterDescription.contentName)
                 }
 
                 function showContentTable(chapterName) {
-                    var chapterDescription = allChapters.find(function (element) {
-                        return element.contentName == chapterName;
-                    })
+                    var chapterDescription = findDescriptionByChapter(allChapters, function (el) {
+                        return el.contentName == chapterName;
+                    });
 
                     window.location.hash = chapterDescription.pageHash;
 
@@ -401,7 +409,7 @@
                     })
 
                     $("#" + chapterName).show();
-                    $("body").css('background-image', `url('../images/top.png'), url('../images/${chapterDescription.background}')`)
+                    $("body").css('background-image', "url('../images/top.png'), url('../images/" + chapterDescription.background +"')");
                 }
 
                 $('form')
