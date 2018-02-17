@@ -336,6 +336,7 @@ td#phoneCell {
  .entryField{
     width: 32%;
     margin: 10px 0px;
+    border: 2px solid #22A9AF;
 }
 
  @media screen and (max-width: 500px)
@@ -354,6 +355,7 @@ td#phoneCell {
      width: 100%;
      resize: none;
      padding: 0;
+     border: 2px solid #22A9AF;
  }
 
  #formButtons {
