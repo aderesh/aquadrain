@@ -40,8 +40,8 @@
                 </div>
             </div>
             <div id="xMinimizedHeaders">
-                <input id="hamburgerCheckBox" name="hamburgerCheckBox" type="checkbox" />
-                <label for="hamburgerCheckBox"></label>
+                <img id="hamburgerIcon" 
+                     src="images/hamburgerMenu.svg">
                 <ul id="xHeadersMenu">
                     <li id="subDrainHeader">DRAIN</li>
                     <li id="subWaterServiceHeader">WATER SERVICE</li>
@@ -346,6 +346,17 @@
                     showContentTable(promotionContentTable)
                 })
 
+                $("#xHeadersMenu").hide();
+                $("#hamburgerIcon").click(function() {
+                    $("#xHeadersMenu").toggle(300);
+                });
+
+                $(document).click(function(e) {
+                    if ($(e.target)[0].id != "hamburgerIcon") {
+                        $("#xHeadersMenu").hide(300);
+                    }
+                });
+
                 let allChapters = [
                     {
                         contentName: main,
@@ -382,17 +393,6 @@
                 allChapters.forEach(function (elementName) {
                     $("#" + elementName.contentName).hide();
                 })
-
-                $("#xHeadersMenu").hide();
-
-                $("#hamburgerCheckBox").change(function () {
-                    if ($(this).is(":checked")) {
-                        $("#xHeadersMenu").show();
-                    }
-                    else {
-                        $("#xHeadersMenu").hide();
-                    }
-                });
 
                 processHashChange();
 

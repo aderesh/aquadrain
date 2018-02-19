@@ -330,25 +330,13 @@ td#phoneCell {
     }
 }
 
-#hamburgerCheckBox {
-    display:none;
-    flex: 1;
-}
-     
-#hamburgerCheckBox + label {
-    background: url("../images/hamburgerMenu.svg") no-repeat;
-    display:inline-block;
+#hamburgerIcon {
     width: 24px;
     height: 24px;
     padding: 0 0 0 0;
     cursor: pointer;
 }
- 
- #hamburgerCheckBox:checked + label {
-    padding: 0 0 0 0;
-    cursor: pointer;
- }
-
+     
  #xHeadersMenu {
     flex: 1;
     margin-top: 30px;
