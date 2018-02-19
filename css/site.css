@@ -196,6 +196,7 @@ td#phoneCell {
 
   #contactGroup {
       display: flex;
+      text-align: center;
   }
 
   #footerCopyright {
@@ -219,16 +220,20 @@ td#phoneCell {
       #footerCopyright {
           order: 2;
           margin: auto;
+          text-align: center;
       }
 
       #contactGroup {
+          width: 100%;
+      }
+
+      #contactGroup a{
           margin: auto;
       }
   }
 
 .footerLabelRight {
     color: white;
-    float: right;
     margin-left: 5px;
     margin-right: 5px;
     font-size: 80%;
