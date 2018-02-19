@@ -127,15 +127,6 @@ td#phoneCell {
     visibility: collapse;
 }
 
-#chapterHeaderCell {
-    text-align: left;
-    color: #f4511e;
-    font-size: 140%;
-    font-weight: bolder;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
 .xChapterHeader {
     text-align: left;
     color: #f4511e;
@@ -143,14 +134,6 @@ td#phoneCell {
     font-weight: bolder;
     padding-top: 12px;
     padding-bottom: 12px;
-}
-
-.chapterSubHeaderCell {
-    text-align: left;
-    color: #22A9AF;
-    font-weight: bold;
-    vertical-align: top;
-    width: 130px;
 }
 
 .xChapterItem{
@@ -170,6 +153,14 @@ td#phoneCell {
 @media screen and (max-width: 650px){
     .xChapterItem{
         flex-direction: column;
+    }
+
+    .xChapterItemHeader{
+        flex: none;
+    }
+
+    .xChapterItemContent {
+        flex: none;
     }
 }
 
