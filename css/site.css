@@ -6,6 +6,7 @@ body {
     background-position: center, center;
     background-position-y: top, 120px;
     background-repeat: no-repeat, no-repeat;
+    background-color: #f2f6ff;
 
     transition: linear all 0.5s;
 }
@@ -67,11 +68,50 @@ td#phoneCell {
     height: 20px;
 }
 
+.backgroundFiller {
+    height: 460px;
+    min-height: 460px;
+    display: flex;
+    max-width: 900px;
+    margin: auto;
+}
+
+.backgroundFiller div {
+    display: flex;
+    margin: 0 auto;
+
+    vertical-align: middle;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+}
+
+.backgroundFiller div div{
+    font-family: 'Exo 2 Black', sans-serif;
+    font-weight: bolder;
+    font-size: 6vw;
+    color: #f4511e;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 600px)
+{
+    .backgroundFiller div {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1020px)
+{
+    .backgroundFiller div div {
+        font-size: 60px;
+    }
+}
 
 .xContent {
-    margin-top: 460px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     max-width: 900px;
 }
 
