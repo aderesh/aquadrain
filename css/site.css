@@ -1,5 +1,10 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
+a {
+    text-decoration:none;
+    color: #22A9AF;
+}
+
 body {
     font-family: 'Exo 2', sans-serif;
     background: url('../images/top.png'), url('../images/backgroundMain.png');
