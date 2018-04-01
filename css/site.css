@@ -9,11 +9,24 @@ body {
     font-family: 'Exo 2', sans-serif;
     background: url('../images/top.png'), url('../images/backgroundMain.png');
     background-position: center, center;
-    background-position-y: top, 120px;
-    background-repeat: no-repeat, no-repeat;
+    background-position-y: top, top;
     background-color: #f2f6ff;
+    background-size: 100%;
+    background-repeat: no-repeat;
 
     transition: linear all 0.5s;
+    margin: 0;
+    padding: 0;
+}
+
+#headerPanel {
+    position: relative;
+}
+
+#background {
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 html {
@@ -74,11 +87,15 @@ td#phoneCell {
 }
 
 .backgroundFiller {
-    height: 460px;
-    min-height: 460px;
     display: flex;
-    max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
+
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .backgroundFiller div {
@@ -184,6 +201,7 @@ td#phoneCell {
 
 #content {
     padding-bottom: 50px;
+    padding: 10px;
 }
 
 .footer {
@@ -194,7 +212,6 @@ td#phoneCell {
     background-color: #192531;
     width: 100%; /* this is to fix margin: auto in ie*/
     margin: auto;
-    max-width: 1025px;
   }
 
   .footer > div {
@@ -272,6 +289,12 @@ td#phoneCell {
     display: flex;
     margin: 0 auto;
     max-width: 900px;
+    width: 100%;
+
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 #xPhoneAndHeaders{
@@ -360,6 +383,8 @@ td#phoneCell {
     list-style-type: none;
     background: white;
     right: 0px;
+
+    position: absolute;
  }
 
  #xHeadersMenu li{

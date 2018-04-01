@@ -11,52 +11,55 @@
 </head>
 
 <body>
-
-    <div id="xHeader">
-        <a href="#">
-            <img id="logo" src="images/logo.svg" />
-        </a>
-        <div id="xPhoneAndHeaders">
-            <div id="xPhone">
-                <span id="labelPhone" class="phoneLabel">647 979 3347</span>
-                <span id="labelCallWorld" class="phoneLabel">CALL</span>
-                <img id="labelMapleLeaf" src="images/mapleLeaf.svg" />
-            </div>
-            <div id="xHeaders">
-                <div class="headerLabelCell" id="drainHeader">
-                    DRAIN
+    <div id="headerPanel">
+        <div id="xHeader">
+            <a href="#">
+                <img id="logo" src="images/logo.svg" />
+            </a>
+            <div id="xPhoneAndHeaders">
+                <div id="xPhone">
+                    <span id="labelPhone" class="phoneLabel">647 979 3347</span>
+                    <span id="labelCallWorld" class="phoneLabel">CALL</span>
+                    <img id="labelMapleLeaf" src="images/mapleLeaf.svg" />
                 </div>
-                <div class="headerLabelCell" id="waterServiceHeader">
-                    WATER SERVICE
+                <div id="xHeaders">
+                    <div class="headerLabelCell" id="drainHeader">
+                        DRAIN
+                    </div>
+                    <div class="headerLabelCell" id="waterServiceHeader">
+                        WATER SERVICE
+                    </div>
+                    <div class="headerLabelCell" id="waterProofingHeader">
+                        WATERPROOFING
+                    </div>
+                    <div class="headerLabelCell" id="emergencyPlumbingHeader">
+                        EMERGENCY PLUMBING
+                    </div>
+                    <div class="headerLabelCell" id="promotionHeader">
+                        PROMOTION
+                    </div>
                 </div>
-                <div class="headerLabelCell" id="waterProofingHeader">
-                    WATERPROOFING
+                <div id="xMinimizedHeaders">
+                    <img id="hamburgerIcon" src="images/hamburgerMenu.svg">
+                    <ul id="xHeadersMenu">
+                        <li id="subDrainHeader">DRAIN</li>
+                        <li id="subWaterServiceHeader">WATER SERVICE</li>
+                        <li id="subWaterProofingHeader">WATERPROOFING</li>
+                        <li id="subEmergencyPlumbingHeader">EMERGENCY PLUMBING</li>
+                        <li id="subPromotionHeader">PROMOTION</li>
+                    </ul>
                 </div>
-                <div class="headerLabelCell" id="emergencyPlumbingHeader">
-                    EMERGENCY PLUMBING
-                </div>
-                <div class="headerLabelCell" id="promotionHeader">
-                    PROMOTION
-                </div>
-            </div>
-            <div id="xMinimizedHeaders">
-                <img id="hamburgerIcon" src="images/hamburgerMenu.svg">
-                <ul id="xHeadersMenu">
-                    <li id="subDrainHeader">DRAIN</li>
-                    <li id="subWaterServiceHeader">WATER SERVICE</li>
-                    <li id="subWaterProofingHeader">WATERPROOFING</li>
-                    <li id="subEmergencyPlumbingHeader">EMERGENCY PLUMBING</li>
-                    <li id="subPromotionHeader">PROMOTION</li>
-                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="backgroundFiller">
-        <div>
-            <div>AQUA DRAIN</div>
-            <div>&amp;</div>
-            <div>WATERWORKS</div>
+        <img id="background" src="images/backgroundMain.png" />
+
+        <div class="backgroundFiller">
+            <div>
+                <div>AQUA DRAIN</div>
+                <div>&amp;</div>
+                <div>WATERWORKS</div>
+            </div>
         </div>
     </div>
 
@@ -431,7 +434,8 @@
                     })
 
                     $("#" + chapterName).show();
-                    $("body").css('background-image', "url('../images/top.png'), url('../images/" + chapterDescription.background + "')");
+
+                    $("#background").attr('src', 'images/' + chapterDescription.background);
                 }
 
                 $('form')
