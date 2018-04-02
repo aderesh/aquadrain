@@ -402,6 +402,10 @@ td#phoneCell {
      justify-content: space-between;
  }
 
+ ::placeholder {
+     color: #f4511e;
+ }
+
  .entryField{
     width: 32%;
     margin: 10px 0px;
