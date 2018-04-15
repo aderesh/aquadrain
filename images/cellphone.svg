@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="24px"
+   version="1.1"
+   viewBox="0 0 24 24"
+   width="24px"
+   id="svg4534"
+   sodipodi:docname="cellphone.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata4538">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1305"
+     inkscape:window-height="774"
+     id="namedview4536"
+     showgrid="false"
+     inkscape:zoom="9.8333333"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-x="603"
+     inkscape:window-y="253"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4534" />
+  <title
+     id="title4524" />
+  <desc
+     id="desc4526" />
+  <defs
+     id="defs4528" />
+  <g
+     fill="none"
+     fill-rule="evenodd"
+     id="miu"
+     stroke="none"
+     stroke-width="1"
+     style="fill:#3ea0a5;fill-opacity:1">
+    <g
+       id="Artboard-1"
+       transform="translate(-791.000000, -587.000000)"
+       style="fill:#3ea0a5;fill-opacity:1">
+      <g
+         id="slice"
+         transform="translate(215.000000, 119.000000)"
+         style="fill:#3ea0a5;fill-opacity:1" />
+      <path
+         d="M797,590 L797,608 C797,610 798.846154,610 798.846154,610 L807.153846,610 C807.153846,610 809,610 809,608 L809,590 C809,588 807.153846,588 807.153846,588 L798.846154,588 C798.846154,588 797,588 797,590 Z M807.153846,589 C807.254104,589 807.469162,589.03883 807.664111,589.144427 C807.938653,589.293138 808.076923,589.517826 808.076923,590 L808.076923,608 C808.076923,608.482174 807.938653,608.706862 807.664111,608.855573 C807.469162,608.96117 807.254104,609 807.153846,609 L798.846154,609 C798.745896,609 798.530838,608.96117 798.335889,608.855573 C798.061347,608.706862 797.923077,608.482174 797.923077,608 L797.923077,590 C797.923077,589.517826 798.061347,589.293138 798.335889,589.144427 C798.530838,589.03883 798.745896,589 798.846154,589 L807.153846,589 Z M803,608.5 C803.509801,608.5 803.923077,608.052285 803.923077,607.5 C803.923077,606.947715 803.509801,606.5 803,606.5 C802.490199,606.5 802.076923,606.947715 802.076923,607.5 C802.076923,608.052285 802.490199,608.5 803,608.5 L803,608.5 Z M800.89658,589.5 C800.783764,589.5 800.692308,589.596554 800.692308,589.721103 L800.692308,589.779668 C800.692308,589.901779 800.784502,590.00077 800.89658,590.00077 L805.10342,590.00077 C805.216236,590.00077 805.307692,589.904217 805.307692,589.779668 L805.307692,589.721103 C805.307692,589.598991 805.215498,589.5 805.10342,589.5 L800.89658,589.5 Z M797.923077,590.5 L797.923077,591.5 L808.076923,591.5 L808.076923,590.5 L797.923077,590.5 Z M797.923077,605 L797.923077,606 L808.076923,606 L808.076923,605 L797.923077,605 Z"
+         fill="#000000"
+         id="device-smart-phone-vertical-outline-stroke"
+         style="fill:#3ea0a5;fill-opacity:1" />
+    </g>
+  </g>
+</svg>
