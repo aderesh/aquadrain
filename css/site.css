@@ -19,6 +19,11 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-size: 110%;
+    display: block;
+}
+
 #headerPanel {
     position: relative;
 }
@@ -325,7 +330,7 @@ td#phoneCell {
 
 .headerLabelCell
 {
-    color: #22A9AF;
+    color: #f4511e;
     padding-left: 3px;
     padding-right: 3px;
     font-weight: bold;
