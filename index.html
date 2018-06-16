@@ -512,6 +512,20 @@
                         });
                     });
 
+                $.ajax({
+                    type: "GET",
+                    url: "http://aquadrainservice.azurewebsites.net/api/estimate",
+                    crossDomain: true,
+                    success: function (msg) {
+                        console.log("PING message received")
+                    },
+                    error: function (msg) {
+                        console.log("PING receive error");
+                    },
+                    complete: function (msg) {
+                        console.log("PING receive complete");
+                    }
+                });
             })
     </script>
 
