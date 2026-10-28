@@ -248,8 +248,8 @@
                     REFERRAL PROGRAM
                 </div>
                 <div class="xChapterItemContent">
-                    <img class="chapterContentImages" alt="plumbing promotion 1" src="..\images\promotion1.PNG" />
-                    <img class="chapterContentImages" alt="plumbing promotion 2" src="..\images\promotion2.PNG" />
+                    <img class="chapterContentImages" alt="plumbing promotion 1" src="images/promotion1.PNG" />
+                    <img class="chapterContentImages" alt="plumbing promotion 2" src="images/promotion2.PNG" />
                 </div>
             </div>
             <div class="xChapterItem">
@@ -286,7 +286,7 @@
 
     <footer class="footer">
         <div>
-            <div id="footerCopyright">&#9400; 2018 Aqua Drain and Waterworks</div>
+            <div id="footerCopyright">&#9400; 2018-<span id="currentYear">2026</span> Aqua Drain and Waterworks</div>
 
             <div id="contactGroup">
                 <a class="footerLabelRight footerMinimizableLabel" href="mailto:contact@aquadrain.org">
@@ -325,50 +325,32 @@
                 const emergencyPlumbingContentTable = "emergencyPlumbingContentTable";
                 const promotionContentTable = "promotionContentTable";
 
-                $("#drainHeader").click(function () {
-                    console.log("drainHeader")
-                    showContentTable(drainContentTable)
-                })
-                $("#subDrainHeader").click(function () {
-                    console.log("drainHeader")
-                    showContentTable(drainContentTable)
-                })
+                const navItems = [
+                    { ids: ["drainHeader", "subDrainHeader"], log: "drainHeader", content: drainContentTable },
+                    { ids: ["waterServiceHeader", "subWaterServiceHeader"], log: "waterServiceHeader", content: waterServiceContentTable },
+                    { ids: ["waterProofingHeader", "subWaterProofingHeader"], log: "waterProofingHeader", content: waterProofingContentTable },
+                    { ids: ["emergencyPlumbingHeader", "subEmergencyPlumbingHeader"], log: "emergencyPlumbingHeader", content: emergencyPlumbingContentTable },
+                    { ids: ["promotionHeader", "subPromotionHeader"], log: "promotionHeader", content: promotionContentTable }
+                ];
 
-                $("#waterServiceHeader").click(function () {
-                    console.log("waterServiceHeader")
-                    showContentTable(waterServiceContentTable)
-                })
-                $("#subWaterServiceHeader").click(function () {
-                    console.log("waterServiceHeader")
-                    showContentTable(waterServiceContentTable)
-                })
+                navItems.forEach(function (item) {
+                    function open() {
+                        console.log(item.log)
+                        showContentTable(item.content)
+                    }
 
-                $("#waterProofingHeader").click(function () {
-                    console.log("waterProofingHeader")
-                    showContentTable(waterProofingContentTable)
-                })
-                $("#subWaterProofingHeader").click(function () {
-                    console.log("waterProofingHeader")
-                    showContentTable(waterProofingContentTable)
-                })
+                    $("#" + item.ids.join(", #"))
+                        .attr({ role: "button", tabindex: 0 })
+                        .click(open)
+                        .keydown(function (e) {
+                            if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                open();
+                            }
+                        });
+                });
 
-                $("#emergencyPlumbingHeader").click(function () {
-                    console.log("emergencyPlumbingHeader")
-                    showContentTable(emergencyPlumbingContentTable)
-                })
-                $("#subEmergencyPlumbingHeader").click(function () {
-                    console.log("emergencyPlumbingHeader")
-                    showContentTable(emergencyPlumbingContentTable)
-                })
-
-                $("#promotionHeader").click(function () {
-                    console.log("promotionHeader")
-                    showContentTable(promotionContentTable)
-                })
-                $("#subPromotionHeader").click(function () {
-                    console.log("promotionHeader")
-                    showContentTable(promotionContentTable)
-                })
+                $("#currentYear").text(new Date().getFullYear());
 
                 $("#xHeadersMenu").hide();
                 $("#hamburgerIcon").click(function () {
@@ -422,7 +404,7 @@
 
                 // for ie support :(
                 function findDescriptionByChapter(array, predicate) {
-                    for (i = 0; i < array.length; i++) {
+                    for (let i = 0; i < array.length; i++) {
                         let el = array[i];
                         if (predicate(el)) {
                             return el;
@@ -440,7 +422,7 @@
                         return el.pageHash == window.location.hash.substring(1);
                     });
 
-                    showContentTable(chapterDescription.contentName)
+                    showContentTable((chapterDescription || allChapters[0]).contentName)
                 }
 
                 function showContentTable(chapterName) {
@@ -476,7 +458,7 @@
 
                         $.ajax({
                             type: "POST",
-                            url: "http://aquadrainservice.azurewebsites.net/api/estimate",
+                            url: "https://aquadrainservice.azurewebsites.net/api/estimate",
                             data: { "name": $("#name").val(), "phone": $("#phone").val(), "email": $("#email").val(), "comments": $("#comments").val() },
                             crossDomain: true,
                             success: function (msg) {
@@ -489,12 +471,6 @@
                                         alert("Internal Error. Please use contact@aquadrain.org to contact us.");
                                     }
                                     else {
-                                        var list = $("#listValidateErrors");
-                                        list.empty();
-
-                                        for (var i = 0; i < msg.errors.length; i++)
-                                            list.append("<li>" + msg.errors[i] + "</li>");
-
                                         alert("Not all fields are filled. Please try again");
                                     }
                                 }
@@ -514,7 +490,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "http://aquadrainservice.azurewebsites.net/api/estimate",
+                    url: "https://aquadrainservice.azurewebsites.net/api/estimate",
                     crossDomain: true,
                     success: function (msg) {
                         console.log("PING message received")
