@@ -291,21 +291,21 @@
             <div id="contactGroup">
                 <a class="footerLabelRight footerMinimizableLabel" href="mailto:contact@aquadrain.org">
                     <div class="iconTextPair">
-                        <img class="footerIcon" alt="foter icon email" src="images/email.svg" />
+                        <img class="footerIcon" alt="footer icon email" src="images/email.svg" />
                         <div>contact@aquadrain.org</div>
                     </div>
                 </a>
 
                 <a class="footerLabelRight" href="tel:6477713346">
                     <div class="iconTextPair">
-                        <img class="footerIcon" alt="foter icon cell phone" src="images/cellphone.svg" />
+                        <img class="footerIcon" alt="footer icon cell phone" src="images/cellphone.svg" />
                         <div>647 771 3346</div>
                     </div>
                 </a>
 
                 <a class="footerLabelRight footerMinimizableLabel" href="https://www.facebook.com/AquaDrainAndWaterworks/">
                     <div class="iconTextPair">
-                        <img class="footerIcon" alt="foter icon facebook" src="images/facebook.svg" />
+                        <img class="footerIcon" alt="footer icon facebook" src="images/facebook.svg" />
                         <div class="footerHiddenFooterIcon">facebook</div>
                     </div>
                 </a>
@@ -445,13 +445,6 @@
                     .submit(function (event) {
                         event.preventDefault();
 
-                        var data = {
-                            Name: $('#name').val(),
-                            Phone: $('#phone').val(),
-                            Email: $('#email').val(),
-                            Comments: $('#comments').val()
-                        };
-
                         $(function () {
                             $("#btnSubmit").prop("disabled", true);
                         });
@@ -466,12 +459,13 @@
                                     $('#formComment').trigger('reset');
                                     alert("Message has been sent. We will contact you soon!");
                                 } else {
-                                    if (msg.hasOwnProperty("internalError")) {
-                                        console.log(msg.internalError + " " + msg.errors.join(";"));
+                                    var errors = msg.errors || [];
+                                    if (msg.internalError) {
+                                        console.log(msg.internalError + " " + errors.join(";"));
                                         alert("Internal Error. Please use contact@aquadrain.org to contact us.");
                                     }
                                     else {
-                                        alert("Not all fields are filled. Please try again");
+                                        alert(errors.length ? errors.join("\n") : "Not all fields are filled. Please try again");
                                     }
                                 }
 
